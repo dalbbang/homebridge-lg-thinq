@@ -222,7 +222,9 @@ export default class AirConditioner extends baseDevice {
     const device: Device = this.accessory.context.device;
     const { TargetFanState } = this.platform.Characteristic;
 
-    const windStrength = value === TargetFanState.AUTO ? 8 : FanSpeed.HIGH; // 8 mean fan auto mode
+    this.platform.log.info('setFanState = ', value);
+    this.platform.log.info('TargetFanState.AUTO = ', TargetFanState.AUTO);
+    const windStrength = value === TargetFanState.AUTO ? 8 : FanSpeed.AUTO; // 8 mean fan auto mode
     return this.platform.ThinQ?.deviceControl(device.id, {
       dataKey: 'airState.windStrength',
       dataValue: windStrength,
