@@ -6,11 +6,12 @@ import {RangeValue} from '../lib/DeviceModel';
 import {cToF} from '../helper';
 
 export enum FanSpeed {
+  SLOW = 1,
   LOW = 2,
-  LOW_MEDIUM = 3,
-  MEDIUM = 4,
-  MEDIUM_HIGH = 5,
-  HIGH = 6,
+  MID = 3,
+  HIGH = 4,
+  POWER = 5,
+  AUTO = 6,
 }
 
 enum OpMode {
